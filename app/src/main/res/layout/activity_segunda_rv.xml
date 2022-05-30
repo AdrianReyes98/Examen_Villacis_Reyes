@@ -22,7 +22,7 @@
         android:layout_marginTop="40dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Ingrese Numero"
+        android:hint="@string/edittext_ingrese_numero"
         android:inputType="number"
         android:maxLength="6"
         android:minHeight="48dp"

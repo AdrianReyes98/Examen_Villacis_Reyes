@@ -2,4 +2,21 @@
     <string name="app_name">Examen Parcial</string>
     <string name="txt_btn_Ingresar">Ingresar</string>
     <string name="txt_btn_Cerrar">Cerrar</string>
+
+    <string name="txtview_visualizar_vector">Visualizacion del vector</string>
+    <string name="txtview_indice_vector">Indice del Vector</string>
+    <string name="txtview_vector_original">Vector Original</string>
+
+    <string name="edittext_ingrese_numero">Ingrese un numero </string>
+
+
+
+    <string name="button_ordenar">Ordenar</string>
+    <string name="button_mostrar">Mostrar</string>
+    <string name="button_siguiente">Siguiente</string>
+    <string name="button_cerrar">Cerrar</string>
+
+
+
+
 </resources>

@@ -11,10 +11,11 @@
         android:theme="@style/Theme.Examen_Villacis_Reyes">
         <activity
             android:name=".SegundaActivityRV"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MainActivityRV"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

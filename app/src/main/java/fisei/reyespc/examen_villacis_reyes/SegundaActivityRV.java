@@ -14,38 +14,49 @@ import java.util.List;
 
 public class SegundaActivityRV extends AppCompatActivity {
 
-    ListView listaNumeros;
-    Button btnIngresar;
-    Button btnCerrar;
-    EditText edtNumero;
-    float[] arrayNumeros;
-    ArrayList<Float> numerosLista;
+    ListView listaNumerosRV;
+    Button btnIngresarRV;
+    Button btnCerrarRV;
+    EditText edtNumeroRV;
+    Float[] arrayNumeros;
+    List<Float> numerosLista;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda_rv);
 
-        listaNumeros = findViewById(R.id.lisVIewNumeros);
-        btnCerrar = findViewById(R.id.buttonCerrar);
-        btnIngresar = findViewById(R.id.buttonIngresar);
-        edtNumero = findViewById(R.id.editTextNumber);
+        listaNumerosRV = findViewById(R.id.lisVIewNumeros);
+        btnCerrarRV = findViewById(R.id.buttonCerrar);
+        btnIngresarRV = findViewById(R.id.buttonIngresar);
+        edtNumeroRV = findViewById(R.id.editTextNumber);
 
-        btnCerrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        btnIngresar.setOnClickListener(new View.OnClickListener() {
+        btnCerrarRV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentAux = new Intent();
+                arrayNumeros = convertirDeArrayAListaRV(numerosLista);
                 intentAux.putExtra("result",arrayNumeros);
                 setResult(78,intentAux);
                 SegundaActivityRV.super.onBackPressed();
             }
         });
+
+        btnIngresarRV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+    private Float[] convertirDeArrayAListaRV(List<Float> datoRV){
+        Float[] resultRV = new Float[datoRV.size()];
+        int i = 0;
+        for (float num: datoRV) {
+            resultRV[i] = num;
+            i++;
+        }
+        return resultRV;
     }
 
 

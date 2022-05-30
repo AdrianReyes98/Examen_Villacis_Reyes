@@ -19,7 +19,7 @@ public class SegundaActivityRV extends AppCompatActivity {
     Button btnCerrarRV;
     EditText edtNumeroRV;
     Float[] arrayNumeros;
-    List<Float> numerosLista;
+    List<Float> numerosLista = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class SegundaActivityRV extends AppCompatActivity {
         listaNumerosRV = findViewById(R.id.lisVIewNumeros);
         btnCerrarRV = findViewById(R.id.buttonCerrar);
         btnIngresarRV = findViewById(R.id.buttonIngresar);
-        edtNumeroRV = findViewById(R.id.editTextNumber);
+        edtNumeroRV = findViewById(R.id.editTextNumero);
 
         btnCerrarRV.setOnClickListener(new View.OnClickListener() {
             @Override

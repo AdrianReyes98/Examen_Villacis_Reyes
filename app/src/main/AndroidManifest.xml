@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Examen_Villacis_Reyes">
         <activity
             android:name=".SegundaActivityRV"
-            android:exported="false"/>
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".MainActivityRV"
             android:exported="true"

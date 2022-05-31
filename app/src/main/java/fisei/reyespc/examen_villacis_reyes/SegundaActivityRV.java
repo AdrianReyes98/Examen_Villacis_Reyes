@@ -20,7 +20,6 @@ public class SegundaActivityRV extends AppCompatActivity {
     Button btnIngresarRV;
     Button btnCerrarRV;
     EditText edtNumeroRV;
-    Integer[] arrayNumeros;
     ArrayList<Integer> numerosListaRV = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,16 +54,6 @@ public class SegundaActivityRV extends AppCompatActivity {
                 listaNumerosRV.setAdapter(adapter);
             }
         });
-    }
-
-    private Float[] convertirDeArrayAListaRV(List<Float> datoRV){
-        Float[] resultRV = new Float[datoRV.size()];
-        int i = 0;
-        for (float num: datoRV) {
-            resultRV[i] = num;
-            i++;
-        }
-        return resultRV;
     }
 
 

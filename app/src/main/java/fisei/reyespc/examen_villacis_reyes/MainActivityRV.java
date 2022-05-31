@@ -20,6 +20,7 @@ public class MainActivityRV extends AppCompatActivity {
     Button btnSegundaActivityRV;
     Button btnOrdenarRV;
     ListView listaOriginalRV;
+
     ListView listaIndicesOrdenadoRV;
     ListView listaVectorOrdenadoRV;
 

@@ -12,8 +12,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivityRV extends AppCompatActivity {
     Button btnSegundaActivityRV;
+    Button btnOrdenarRV;
+
+    Integer[] arrayNumerosOrdenar;
+    List<Integer> numerosVector = new ArrayList<>();
 
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -41,11 +48,27 @@ public class MainActivityRV extends AppCompatActivity {
 
         btnSegundaActivityRV = findViewById(R.id.buttonSiguienteRV);
 
+        btnOrdenarRV = findViewById(R.id.buttonOrdenarRV);
+
+
         btnSegundaActivityRV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent dos = new Intent(MainActivityRV.this, SegundaActivityRV.class);
                 activityResultLauncher.launch(dos);
+            }
+        });
+
+
+        btnOrdenarRV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int i =0;
+                int j, temp;
+                int n =0;
+
+
+
             }
         });
     }

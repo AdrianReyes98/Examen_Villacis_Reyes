@@ -2,6 +2,7 @@ package fisei.reyespc.examen_villacis_reyes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,9 @@ public class SegundaActivityRV extends AppCompatActivity {
         btnCerrarRV = findViewById(R.id.buttonCerrar);
         btnIngresarRV = findViewById(R.id.buttonIngresar);
         edtNumeroRV = findViewById(R.id.editTextNumero);
+        Context context = this;
+        CustomAdapter adapter = new CustomAdapter(this, numerosLista);
+        listaNumerosRV.setAdapter(adapter);
 
         btnCerrarRV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +49,9 @@ public class SegundaActivityRV extends AppCompatActivity {
         btnIngresarRV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numerosLista.add(Float.valueOf(edtNumeroRV.getText().toString()));
+                CustomAdapter adapter = new CustomAdapter(context, numerosLista);
+                listaNumerosRV.setAdapter(adapter);
             }
         });
     }

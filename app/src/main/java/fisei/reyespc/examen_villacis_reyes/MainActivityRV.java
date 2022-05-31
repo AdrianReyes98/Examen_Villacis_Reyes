@@ -13,9 +13,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivityRV extends AppCompatActivity {
-
-
     Button btnSegundaActivityRV;
+
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {

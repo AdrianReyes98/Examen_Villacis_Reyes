@@ -14,6 +14,12 @@ public class CustomAdapter extends BaseAdapter {
 
     Context context;
     List<Float> numeros;
+
+    public CustomAdapter(Context context, List<Float> numeros) {
+        this.context = context;
+        this.numeros = numeros;
+    }
+
     @Override
     public int getCount() {
         return numeros.size();
@@ -29,6 +35,10 @@ public class CustomAdapter extends BaseAdapter {
         return 0;
     }
 
+    public List<Float> getDataRV(){
+        return this.numeros;
+    }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
@@ -37,7 +47,7 @@ public class CustomAdapter extends BaseAdapter {
             view = LayoutInflater.from(context).inflate(R.layout.list_item_numeros_rv, null);
         }
         edtNumero = view.findViewById(R.id.textViewNumero);
-
+        edtNumero.setText(numeros.get(i).toString());
 
         return view;
     }

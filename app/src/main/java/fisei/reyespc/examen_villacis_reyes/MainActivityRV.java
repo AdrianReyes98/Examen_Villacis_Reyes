@@ -21,13 +21,14 @@ public class MainActivityRV extends AppCompatActivity {
     Button btnSegundaActivityRV;
     Button btnOrdenarRV;
     Button btnMostrarRV;
-    ListView listaOriginalRV;
 
+    ListView listaOriginalRV;
     ListView listaIndicesOrdenadoRV;
     ListView listaVectorOrdenadoRV;
 
     Integer[] arrayNumerosOrdenar;
-    ArrayList<Integer> numerosVector = new ArrayList<>();
+    ArrayList<Integer> numerosVectorRV = new ArrayList<>();
+    ArrayList<Integer> indicesRv = new ArrayList<>();
 
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -37,10 +38,8 @@ public class MainActivityRV extends AppCompatActivity {
                     if(result.getResultCode() == 78){
                         Intent intent = result.getData();
                         if(intent != null){
-                            numerosVector = new ArrayList<>();
-                            numerosVector = intent.getIntegerArrayListExtra("result");
-                            CustomAdapter adapter = new CustomAdapter(MainActivityRV.this, numerosVector);
-                            listaOriginalRV.setAdapter(adapter);
+                            numerosVectorRV = new ArrayList<>();
+                            numerosVectorRV = intent.getIntegerArrayListExtra("result");
                             btnMostrarRV.setEnabled(true);
                             btnOrdenarRV.setEnabled(true);
                         }else{
@@ -60,6 +59,8 @@ public class MainActivityRV extends AppCompatActivity {
         btnOrdenarRV = findViewById(R.id.buttonOrdenarRV);
         btnMostrarRV = findViewById(R.id.buttonMostrarRV);
         listaOriginalRV = findViewById(R.id.listViewVectorOriginal);
+        listaIndicesOrdenadoRV = findViewById(R.id.listViewIndicesVector);
+        listaVectorOrdenadoRV = findViewById(R.id.listViewVector);
 
         btnMostrarRV.setEnabled(false);
         btnOrdenarRV.setEnabled(false);
@@ -71,25 +72,69 @@ public class MainActivityRV extends AppCompatActivity {
                 activityResultLauncher.launch(dos);
             }
         });
+        btnMostrarRV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomAdapter adapter = new CustomAdapter(MainActivityRV.this, numerosVectorRV);
+                listaOriginalRV.setAdapter(adapter);
+                int i=0;
+                int j;
+                int c = 0;
+                int tam = numerosVectorRV.size();
+
+                while(c < tam){
+                    indicesRv.add(c);
+                    c++;
+                }
+
+                while(i < tam){
+                    j = i;
+                    while(j < tam){
+                        if(numerosVectorRV.get(i) > numerosVectorRV.get(j)){
+                            int temp = indicesRv.get(i);
+                            indicesRv.set(j,indicesRv.get(i));
+                            indicesRv.set(i,temp);
+                        }
+                        j++;
+                    }
+                    i++;
+                }
+
+                CustomAdapter adapter2 = new CustomAdapter(MainActivityRV.this, indicesRv);
+                listaIndicesOrdenadoRV.setAdapter(adapter2);
+            }
+        });
 
 
         btnOrdenarRV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int i =0;
-                int j, temp;
-                int n =0;
+                CustomAdapter adapter = new CustomAdapter(MainActivityRV.this, numerosVectorRV);
+                listaVectorOrdenadoRV.setAdapter(adapter);
 
+                /*
+                int i = 0;
+                int j;
+                int temp = 0;
+                int n;
 
+                CustomAdapter adapter = new CustomAdapter(MainActivityRV.this, numerosVectorRV);
+                listaOriginalVectorRV.setAdapter(adapter);
+
+                while ( i < numerosVector.size() ){
+
+                    numerosVectorOriginal = new ArrayList<>();
+                    listaOriginalRV.setAdapter(adapter);
+                    i++;
+
+                }
+
+                 */
 
             }
         });
-    }
 
-
-    public void onClicordenarDatos(){
 
     }
-
 
 }

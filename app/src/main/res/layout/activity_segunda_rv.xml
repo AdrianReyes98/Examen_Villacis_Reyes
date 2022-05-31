@@ -27,6 +27,7 @@
         android:maxLength="6"
         android:minHeight="48dp"
         android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/lisVIewNumeros"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

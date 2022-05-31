@@ -8,14 +8,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomAdapter extends BaseAdapter {
 
     Context context;
-    List<Integer> numeros;
+    ArrayList<Integer> numeros;
 
-    public CustomAdapter(Context context, List<Integer> numeros) {
+    public CustomAdapter(Context context, ArrayList<Integer> numeros) {
         this.context = context;
         this.numeros = numeros;
     }
@@ -35,7 +36,7 @@ public class CustomAdapter extends BaseAdapter {
         return 0;
     }
 
-    public List<Integer> getDataRV(){
+    public ArrayList<Integer> getDataRV(){
         return this.numeros;
     }
 

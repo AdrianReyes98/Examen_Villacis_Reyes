@@ -6,6 +6,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.List;
 public class MainActivityRV extends AppCompatActivity {
     Button btnSegundaActivityRV;
     Button btnOrdenarRV;
+    Button btnMostrarRV;
     ListView listaOriginalRV;
 
     ListView listaIndicesOrdenadoRV;
@@ -35,11 +37,13 @@ public class MainActivityRV extends AppCompatActivity {
                     if(result.getResultCode() == 78){
                         Intent intent = result.getData();
                         if(intent != null){
-                            numerosVector = intent.getIntegerArrayListExtra("restult");
-                            CustomAdapter adapter = new CustomAdapter(getApplicationContext(), numerosVector);
+                            numerosVector = new ArrayList<>();
+                            numerosVector = intent.getIntegerArrayListExtra("result");
+                            CustomAdapter adapter = new CustomAdapter(MainActivityRV.this, numerosVector);
                             listaOriginalRV.setAdapter(adapter);
+                            btnMostrarRV.setEnabled(true);
+                            btnOrdenarRV.setEnabled(true);
                         }else{
-                            //dato.setText("SIN DATA");
                             Toast.makeText(MainActivityRV.this,"NO se trajo los datos",Toast.LENGTH_LONG).show();
                         }
                     }
@@ -53,9 +57,12 @@ public class MainActivityRV extends AppCompatActivity {
         getSupportActionBar().hide();
 
         btnSegundaActivityRV = findViewById(R.id.buttonSiguienteRV);
-
         btnOrdenarRV = findViewById(R.id.buttonOrdenarRV);
+        btnMostrarRV = findViewById(R.id.buttonMostrarRV);
+        listaOriginalRV = findViewById(R.id.listViewVectorOriginal);
 
+        btnMostrarRV.setEnabled(false);
+        btnOrdenarRV.setEnabled(false);
 
         btnSegundaActivityRV.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,6 +19,9 @@ import java.util.List;
 public class MainActivityRV extends AppCompatActivity {
     Button btnSegundaActivityRV;
     Button btnOrdenarRV;
+    ListView listaOriginalRV;
+    ListView listaIndicesOrdenadoRV;
+    ListView listaVectorOrdenadoRV;
 
     Integer[] arrayNumerosOrdenar;
     ArrayList<Integer> numerosVector = new ArrayList<>();
@@ -31,6 +35,8 @@ public class MainActivityRV extends AppCompatActivity {
                         Intent intent = result.getData();
                         if(intent != null){
                             numerosVector = intent.getIntegerArrayListExtra("restult");
+                            CustomAdapter adapter = new CustomAdapter(getApplicationContext(), numerosVector);
+                            listaOriginalRV.setAdapter(adapter);
                         }else{
                             //dato.setText("SIN DATA");
                             Toast.makeText(MainActivityRV.this,"NO se trajo los datos",Toast.LENGTH_LONG).show();

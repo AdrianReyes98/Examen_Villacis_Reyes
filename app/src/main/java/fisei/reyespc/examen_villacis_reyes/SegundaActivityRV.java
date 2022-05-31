@@ -24,6 +24,7 @@ public class SegundaActivityRV extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda_rv);
+        getSupportActionBar().hide();
 
         listaNumerosRV = findViewById(R.id.lisVIewNumeros);
         btnCerrarRV = findViewById(R.id.buttonCerrar);

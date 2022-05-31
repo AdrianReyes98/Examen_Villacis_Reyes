@@ -20,7 +20,7 @@ public class MainActivityRV extends AppCompatActivity {
     Button btnOrdenarRV;
 
     Integer[] arrayNumerosOrdenar;
-    List<Integer> numerosVector = new ArrayList<>();
+    ArrayList<Integer> numerosVector = new ArrayList<>();
 
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -30,8 +30,7 @@ public class MainActivityRV extends AppCompatActivity {
                     if(result.getResultCode() == 78){
                         Intent intent = result.getData();
                         if(intent != null){
-                            Toast.makeText(MainActivityRV.this,"SI se trajo los datos",Toast.LENGTH_LONG).show();
-                            //dato.setText(intent.getStringExtra("result"));
+                            numerosVector = intent.getIntegerArrayListExtra("restult");
                         }else{
                             //dato.setText("SIN DATA");
                             Toast.makeText(MainActivityRV.this,"NO se trajo los datos",Toast.LENGTH_LONG).show();

@@ -40,7 +40,6 @@ public class SegundaActivityRV extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentAux = new Intent();
-                //arrayNumeros = convertirDeArrayAListaRV(numerosLista);
                 intentAux.putIntegerArrayListExtra("result",numerosListaRV);
                 setResult(78,intentAux);
                 SegundaActivityRV.super.onBackPressed();

@@ -13,9 +13,9 @@ import java.util.List;
 public class CustomAdapter extends BaseAdapter {
 
     Context context;
-    List<Float> numeros;
+    List<Integer> numeros;
 
-    public CustomAdapter(Context context, List<Float> numeros) {
+    public CustomAdapter(Context context, List<Integer> numeros) {
         this.context = context;
         this.numeros = numeros;
     }
@@ -35,7 +35,7 @@ public class CustomAdapter extends BaseAdapter {
         return 0;
     }
 
-    public List<Float> getDataRV(){
+    public List<Integer> getDataRV(){
         return this.numeros;
     }
 

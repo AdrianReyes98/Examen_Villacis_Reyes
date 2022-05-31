@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +20,8 @@ public class SegundaActivityRV extends AppCompatActivity {
     Button btnIngresarRV;
     Button btnCerrarRV;
     EditText edtNumeroRV;
-    Float[] arrayNumeros;
-    List<Float> numerosLista = new ArrayList<>();
+    Integer[] arrayNumeros;
+    ArrayList<Integer> numerosListaRV = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +33,15 @@ public class SegundaActivityRV extends AppCompatActivity {
         btnIngresarRV = findViewById(R.id.buttonIngresar);
         edtNumeroRV = findViewById(R.id.editTextNumero);
         Context context = this;
-        CustomAdapter adapter = new CustomAdapter(this, numerosLista);
+        CustomAdapter adapter = new CustomAdapter(this, numerosListaRV);
         listaNumerosRV.setAdapter(adapter);
 
         btnCerrarRV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentAux = new Intent();
-                arrayNumeros = convertirDeArrayAListaRV(numerosLista);
-                intentAux.putExtra("result",arrayNumeros);
+                //arrayNumeros = convertirDeArrayAListaRV(numerosLista);
+                intentAux.putIntegerArrayListExtra("result",numerosListaRV);
                 setResult(78,intentAux);
                 SegundaActivityRV.super.onBackPressed();
             }
@@ -49,8 +50,8 @@ public class SegundaActivityRV extends AppCompatActivity {
         btnIngresarRV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numerosLista.add(Float.valueOf(edtNumeroRV.getText().toString()));
-                CustomAdapter adapter = new CustomAdapter(context, numerosLista);
+                numerosListaRV.add(Integer.valueOf(edtNumeroRV.getText().toString()));
+                CustomAdapter adapter = new CustomAdapter(context, numerosListaRV);
                 listaNumerosRV.setAdapter(adapter);
             }
         });

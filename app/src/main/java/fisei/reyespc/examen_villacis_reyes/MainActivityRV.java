@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -30,13 +29,8 @@ public class MainActivityRV extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if(result.getResultCode() == 78){
                         Intent intent = result.getData();
-
                         if(intent != null){
-                            try {
-                                numerosVector = intent.getIntegerArrayListExtra("result");
-                            }catch (Exception e){
-                                e.printStackTrace();
-                            }
+                            Toast.makeText(MainActivityRV.this,"SI se trajo los datos",Toast.LENGTH_LONG).show();
                             //dato.setText(intent.getStringExtra("result"));
                         }else{
                             //dato.setText("SIN DATA");

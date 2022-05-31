@@ -39,7 +39,7 @@ public class MainActivityRV extends AppCompatActivity {
         setContentView(R.layout.activity_main_rv);
         getSupportActionBar().hide();
 
-        btnSegundaActivityRV = findViewById(R.id.buttonSiguiente);
+        btnSegundaActivityRV = findViewById(R.id.buttonSiguienteRV);
 
         btnSegundaActivityRV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,4 +49,11 @@ public class MainActivityRV extends AppCompatActivity {
             }
         });
     }
+
+
+    public void onClicordenarDatos(){
+
+    }
+
+
 }

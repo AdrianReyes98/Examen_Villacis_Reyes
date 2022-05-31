@@ -3,18 +3,18 @@
     <string name="txt_btn_Ingresar">Ingresar</string>
     <string name="txt_btn_Cerrar">Cerrar</string>
 
-    <string name="txtview_visualizar_vector">Visualizacion del vector</string>
-    <string name="txtview_indice_vector">Indice del Vector</string>
-    <string name="txtview_vector_original">Vector Original</string>
+    <string name="txtview_visualizar_vectorRV">Visualizacion del vector</string>
+    <string name="txtview_indice_vectorRV">Indice del Vector</string>
+    <string name="txtview_vector_originalRV">Vector Original</string>
 
-    <string name="edittext_ingrese_numero">Ingrese un numero </string>
+    <string name="edittext_ingrese_numeroRV">Ingrese un numero </string>
 
 
 
-    <string name="button_ordenar">Ordenar</string>
-    <string name="button_mostrar">Mostrar</string>
-    <string name="button_siguiente">Siguiente</string>
-    <string name="button_cerrar">Cerrar</string>
+    <string name="button_ordenarRV">Ordenar</string>
+    <string name="button_mostrarRV">Mostrar</string>
+    <string name="button_siguienteRV">Siguiente</string>
+    <string name="button_cerrarRV">Cerrar</string>
 
 
 

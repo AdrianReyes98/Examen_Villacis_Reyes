@@ -7,12 +7,12 @@
     tools:context=".MainActivityRV">
 
     <Button
-        android:id="@+id/buttonOrdenar"
+        android:id="@+id/buttonOrdenarRV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/button_ordenar"
+        android:text="@string/button_ordenarRV"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -46,12 +46,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonSiguiente"
+        android:id="@+id/buttonSiguienteRV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/button_siguiente"
+        android:text="@string/button_siguienteRV"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -75,15 +75,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/buttonMostrar"
+        android:id="@+id/buttonMostrarRV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="350dp"
         android:layout_marginEnd="128dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/button_mostrar"
+        android:text="@string/button_mostrarRV"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSiguiente"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSiguienteRV"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent" />
 
